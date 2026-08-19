@@ -37,6 +37,28 @@ npm run dev
 npm run build
 ```
 
+## Docker 运行
+
+构建镜像：
+
+```bash
+docker build -t vndr-web:demo .
+```
+
+启动容器：
+
+```bash
+docker run --rm -p 3000:3000 vndr-web:demo
+```
+
+或使用 docker compose：
+
+```bash
+docker compose up --build
+```
+
+当前 demo 采用“内容打进镜像”的方式：改文章或代码后需要重新构建镜像。后续如果希望只改服务器上的内容文件，再改成挂载 `content/` 卷或增加动态更新接口。
+
 ## 目录结构
 
 ```text
